@@ -61,7 +61,9 @@ def main():
 
     # initialize keys in linkDict
     for link in tf_listener.getFrameStrings():
-        if 'reference' not in link:
+        print("found link: " + str(link))
+        if link != 'map' and 'reference' not in link:
+            print("link added")
             link_dict[link] = (trans, rot)
 
     # main loop. Updates the values for each link in link_dict and publish the values
